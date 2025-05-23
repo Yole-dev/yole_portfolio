@@ -4,13 +4,14 @@ export default function App() {
   return (
     <section className="app-container">
       <Header />
+      <AboutSection />
     </section>
   );
 }
 
 function Header() {
   return (
-    <div className="header">
+    <section className="header">
       <div className="header-img-div">
         <img
           src={cartoonPic}
@@ -37,8 +38,12 @@ function Header() {
           Contact Me
         </Button>
       </div>
-    </div>
+    </section>
   );
+}
+
+function AboutSection() {
+  return;
 }
 
 // reusable button component
