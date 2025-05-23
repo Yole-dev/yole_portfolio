@@ -11,11 +11,15 @@ export default function App() {
 function Header() {
   return (
     <div className="header">
-      <img
-        src={cartoonPic}
-        alt="cartoon pic of myself"
-        className="cartoon-pic"
-      />
+      <div className="header-img-div">
+        <img
+          src={cartoonPic}
+          alt="cartoon pic of myself"
+          className="cartoon-pic"
+        />
+
+        <div className="active-dot"></div>
+      </div>
 
       <div className="intro-text">
         <p>Hello, I'm Godswill Igbava.</p>
