@@ -3,7 +3,7 @@
 
 :root {
   --primary-blue: #040c24;
-  --secondary-blue: #02050a;
+  --secondary-black: #02050a;
   --primary-black: #080e1b;
   --text-color: #ffffff;
   --sub-text-color: #e6e8eb;
@@ -58,7 +58,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  border: 3px solid var(--secondary-blue);
+  border: 3px solid var(--secondary-black);
 }
 
 .active-dot {
@@ -110,7 +110,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 0 1rem;
 }
 
@@ -155,4 +155,75 @@ body {
   border-radius: 100%;
   border: solid 3px var(--highlight-color);
   box-shadow: 0 0 0.5rem var(--highlight-color);
+}
+
+.skill-section {
+  width: 100%;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.skill-section > p {
+  align-self: start;
+  font-size: var(--headings-font);
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  background: var(--primary-black);
+}
+
+.icon-box {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  font-size: 30px;
+  background: var(--secondary-black);
+}
+
+.htmlIcon {
+  color: #e34f26;
+}
+
+.cssIcon {
+  color: #1572b6;
+}
+
+.jsIcon {
+  color: #f7df1e;
+}
+
+.reactIcon {
+  color: #61dafb;
+}
+
+.tailwindIcon {
+  fill: #06b6d4;
+}
+
+.tailwindIcon svg {
+  width: 30px;
+}
+
+.gitIcon {
+  color: #f05032;
 }
