@@ -1,11 +1,16 @@
 import cartoonPic from "./assets/profile_pic.png";
 
+// imported projects images
+import project1 from "./assets/quickaash.png";
+import project2 from "./assets/bloomdigitale.png";
+
 export default function App() {
   return (
     <section className="app-container">
       <Header />
       <AboutSection />
       <SkillSection />
+      <ProjectSection />
     </section>
   );
 }
@@ -114,6 +119,54 @@ function SkillSection() {
   );
 }
 
+function ProjectSection() {
+  const projectData = [
+    {
+      id: "quickaash",
+      companyName: "Quickaash",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic sed architecto iusto eius magnam molestiae. Perspiciatis accusamus repellat autem dolorum qui assumenda corporis ",
+      imageSrc: `${project1}`,
+    },
+
+    {
+      id: "bloom digitale",
+      companyName: "Bloom Digitale",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic sed architecto iusto eius magnam molestiae. Perspiciatis accusamus repellat autem dolorum qui assumenda corporis ",
+      imageSrc: `${project2}`,
+    },
+  ];
+
+  return (
+    <section className="project-section">
+      <p>Projects</p>
+
+      <div className="projects-container">
+        {projectData.map((project) => (
+          <ProjectBox key={project.id}>
+            <div className="project-img-container">
+              <img src={project.imageSrc} alt="" />
+            </div>
+
+            <p className="project-name">{project.companyName}</p>
+            <p className="project-description">{project.description}</p>
+
+            <Button
+              background="#02050a"
+              border="solid 1px #e6e8eb"
+              className="view-btn"
+            >
+              View Project
+              <i class="fa-solid fa-chevron-right"></i>
+            </Button>
+          </ProjectBox>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 // reusable components
 
 function Box({ children, className = "" }) {
@@ -122,6 +175,10 @@ function Box({ children, className = "" }) {
       <div className={`icon-box ${className}`}>{children}</div>
     </div>
   );
+}
+
+function ProjectBox({ children }) {
+  return <div className="project-box">{children}</div>;
 }
 
 function Button({
@@ -136,6 +193,7 @@ function Button({
     padding: " 1rem 1.5rem ",
     border,
     color: "#FFFFFF",
+    cursor: "pointer",
   };
 
   return (
