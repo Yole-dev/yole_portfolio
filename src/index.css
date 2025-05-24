@@ -37,6 +37,73 @@ body {
   color: var(--text-color);
 }
 
+.layout-container {
+  width: 100svw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 0;
+}
+
+.layout-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: start;
+}
+
+.layout-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: end;
+  gap: 1.5rem;
+  font-family: var(--headings-font);
+  color: var(--sub-text-color);
+}
+
+.layout-footer hr {
+  width: 80%;
+  height: 0.3px;
+  background: var(--sub-text-color);
+  opacity: 0.1;
+}
+
+.layout-footer p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.layout-footer p span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.socials-link {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: var(--sub-text-color);
+}
+
+.socials-link a {
+  font-size: 23px;
+}
+
+.socials-link a svg {
+  fill: var(--sub-text-color);
+  width: 20px;
+  height: 20px;
+}
+
+.socials-link a:hover {
+  color: var(--highlight-color);
+  fill: var(--highlight-color);
+}
+
 .app-container {
   width: 100svw;
   display: flex;
