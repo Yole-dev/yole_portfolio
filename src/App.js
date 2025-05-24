@@ -37,7 +37,7 @@ function Header() {
 
       <div className="intro-btns">
         <Button border="none" className="intro-btn view-btn">
-          View Projects
+          <a href="#projects">View Projects</a>
         </Button>
 
         <Button border="solid 1px #1e90ff" className="intro-btn contact-btn">
@@ -139,7 +139,7 @@ function ProjectSection() {
   ];
 
   return (
-    <section className="project-section">
+    <section className="project-section" id="projects">
       <p>Projects</p>
 
       <div className="projects-container">
