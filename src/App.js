@@ -30,7 +30,7 @@ function Header() {
 
       <div className="intro-text">
         <p>Hello, I'm Godswill Igbava.</p>
-        <p>Frontend Developer</p>
+        <p>Frontend Web Developer</p>
 
         <p>I create engaging and responsive web experiences.</p>
       </div>
