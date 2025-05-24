@@ -12,7 +12,7 @@ export default function Layout({ children }) {
   return (
     <div className="layout-container">
       <Header />
-      <main>
+      <main className="layout-main">
         {/* holds page content */}
         {children}
       </main>
@@ -23,7 +23,41 @@ export default function Layout({ children }) {
 }
 
 function Header() {
-  return <section className="layout-header"></section>;
+  const [hover, setHover] = useState(false);
+
+  function handleIconHover() {
+    setHover(!hover);
+  }
+
+  function handleIcon() {
+    setHover(hover);
+  }
+
+  return (
+    <section className="layout-header">
+      <div className="header-nav">
+        <div className="nav-item">
+          <Link to="/">
+            <ion-icon name="home-outline"></ion-icon>
+          </Link>
+        </div>
+
+        <div
+          className="nav-item"
+          onMouseEnter={handleIconHover}
+          onMouseLeave={handleIcon}
+        >
+          <Link to="/projects">
+            {!hover ? (
+              <ion-icon name="folder-outline"></ion-icon>
+            ) : (
+              <ion-icon name="folder-open-outline"></ion-icon>
+            )}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 function Footer() {
