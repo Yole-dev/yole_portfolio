@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import cartoonPic from "../assets/profile_pic.png";
@@ -14,6 +15,7 @@ export default function Home() {
       <SkillSection />
       <ProjectSection />
       <Experience />
+      <Contact />
     </section>
   );
 }
@@ -196,8 +198,10 @@ function ProjectSection() {
       </div>
 
       <Button border="solid 1px #e6e8eb" className="view-all-projects-btn">
-        View All Projects
-        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <Link to="/projects">
+          View All Projects
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </Link>
       </Button>
     </section>
   );
@@ -246,6 +250,26 @@ function Experience() {
           </div>
         ))}
       </div>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section className="contact-section" id="contact">
+      <p>want to talk?</p>
+      <p></p>
+
+      <form action="" method="post">
+        <input type="text" placeholder="Full Name" />
+        <input type="email" placeholder="Email Address" />
+
+        <textarea name="" id="" placeholder="Write your message"></textarea>
+
+        <Button border="solid 1px #e6e8eb" className="submit-btn">
+          Let's Talk
+        </Button>
+      </form>
     </section>
   );
 }

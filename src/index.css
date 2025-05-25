@@ -23,7 +23,19 @@ html {
   font-family: var(--general-font);
 }
 
+button {
+  border: none;
+}
+
 button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+textarea:focus {
   outline: none;
 }
 
@@ -126,7 +138,7 @@ body {
 
 .resume::after {
   display: none;
-  content: "Download Resume";
+  content: "Resume";
   line-height: 25px;
 }
 
@@ -560,4 +572,56 @@ body {
   font-size: 15px;
   color: var(--highlight-color);
   font-weight: 500;
+}
+
+.contact-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+  margin-top: 3rem;
+}
+
+.contact-section > p:first-of-type {
+  font-size: var(--headings-font);
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.contact-section form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-section form input,
+textarea {
+  background: var(--primary-black);
+  padding: 1rem 0;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--sub-text-color);
+}
+
+.contact-section form input:focus,
+textarea:focus {
+  border: solid 1px var(--highlight-color);
+}
+
+.contact-section form textarea {
+  height: 200px;
+}
+
+.contact-section form button {
+  align-self: start;
+}
+
+.submit-btn {
+  font-size: 18px;
 }
