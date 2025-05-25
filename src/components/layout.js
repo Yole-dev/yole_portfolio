@@ -1,5 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+
+// imported file
+import resume from "../assets/resume.pdf";
 
 export default function Layout({ children }) {
   const location = useLocation();
@@ -23,38 +26,26 @@ export default function Layout({ children }) {
 }
 
 function Header() {
-  const [hover, setHover] = useState(false);
-
-  function handleIconHover() {
-    setHover(!hover);
-  }
-
-  function handleIcon() {
-    setHover(hover);
-  }
-
   return (
     <section className="layout-header">
       <div className="header-nav">
-        <div className="nav-item">
-          <Link to="/">
-            <ion-icon name="home-outline"></ion-icon>
-          </Link>
-        </div>
+        <Link to="/" className="nav-item home">
+          <ion-icon name="home-outline"></ion-icon>
+        </Link>
 
-        <div
-          className="nav-item"
-          onMouseEnter={handleIconHover}
-          onMouseLeave={handleIcon}
+        <Link to="/projects" className="nav-item projects">
+          <ion-icon name="folder-outline"></ion-icon>
+        </Link>
+
+        <a
+          href={resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          download="Godswill_Igbava_Resume.pdf"
+          className="nav-item resume"
         >
-          <Link to="/projects">
-            {!hover ? (
-              <ion-icon name="folder-outline"></ion-icon>
-            ) : (
-              <ion-icon name="folder-open-outline"></ion-icon>
-            )}
-          </Link>
-        </div>
+          <ion-icon name="document-text-outline"></ion-icon>
+        </a>
       </div>
     </section>
   );
@@ -70,7 +61,11 @@ function Footer() {
       </p>
 
       <div className="socials-link">
-        <a href="https://x.com/00Yole00">
+        <a
+          href="https://x.com/00Yole00"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             role="img"
             viewBox="0 0 24 24"
@@ -81,7 +76,11 @@ function Footer() {
           </svg>
         </a>
 
-        <a href="https://github.com/Yole-dev">
+        <a
+          href="https://github.com/Yole-dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             role="img"
             viewBox="0 0 24 24"
@@ -92,12 +91,20 @@ function Footer() {
           </svg>
         </a>
 
-        <a href="https://www.linkedin.com/in/igbava-godswill">
-          <i class="fa-brands fa-linkedin-in"></i>
+        <a
+          href="https://www.linkedin.com/in/igbava-godswill"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ion-icon name="logo-linkedin"></ion-icon>
         </a>
 
-        <a href="mailto:igbavagodswillapp@gmail.com">
-          <i class="fa-solid fa-envelope"></i>
+        <a
+          href="mailto:igbavagodswillapp@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <ion-icon name="mail-outline"></ion-icon>
         </a>
       </div>
     </section>

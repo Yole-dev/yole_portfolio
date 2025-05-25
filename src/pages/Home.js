@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import cartoonPic from "../assets/profile_pic.png";
 
 // imported projects images
@@ -13,6 +15,26 @@ export default function Home() {
       <ProjectSection />
     </section>
   );
+}
+
+// custom hook to watch screen width changes
+function useScreenWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(
+    function () {
+      function handleResize() {
+        setWidth(window.innerWidth);
+      }
+
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    },
+    [width]
+  );
+
+  return width;
 }
 
 function Header() {
@@ -36,12 +58,13 @@ function Header() {
       </div>
 
       <div className="intro-btns">
-        <Button border="none" className="intro-btn view-btn">
-          <a href="#projects">View Projects</a>
-        </Button>
-
-        <Button border="solid 1px #1e90ff" className="intro-btn contact-btn">
-          Contact Me
+        <Button border="solid 1px #1e90ff" className="intro-btn">
+          <a href="#contact">
+            Hire Me
+            <span>
+              <ion-icon name="alert-outline"></ion-icon>
+            </span>
+          </a>
         </Button>
       </div>
     </section>
@@ -120,6 +143,8 @@ function SkillSection() {
 }
 
 function ProjectSection() {
+  const screenWidth = useScreenWidth();
+
   const projectData = [
     {
       id: "quickaash",
@@ -151,7 +176,10 @@ function ProjectSection() {
 
             <p className="project-name">{project.companyName}</p>
             <p className="project-description">
-              {project.description.split(" ").slice(0, 15).join(" ") + " ..."}
+              {screenWidth > 500
+                ? project.description
+                : project.description.split(" ").slice(0, 15).join(" ") +
+                  " ..."}
             </p>
 
             <Button

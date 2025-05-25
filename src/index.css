@@ -35,6 +35,7 @@ a {
 body {
   background: var(--primary-blue);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .layout-container {
@@ -59,8 +60,8 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 1rem;
-  border-radius: 0.7rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
   background: rgba(8, 14, 27, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* Safari support */
@@ -72,12 +73,65 @@ body {
 }
 
 .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item:hover {
+  color: var(--highlight-color);
+}
+
+.nav-item::after {
+  position: absolute;
+  top: 4rem;
+  font-family: var(--headings-font);
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 3px;
+  line-height: 25px;
+  color: var(--sub-text-color);
+  background: var(--primary-black);
   padding: 0.5rem;
-  border-radius: ;
+  border-radius: 0.3rem;
+}
+
+.home:hover::after {
+  display: block;
+}
+
+.home::after {
+  display: none;
+  content: "Home";
+}
+
+.projects {
+  border-inline: solid 1px var(--sub-text-color);
+  padding: 0 1rem;
+}
+
+.projects:hover::after {
+  display: block;
+}
+
+.projects::after {
+  display: none;
+  content: "Projects";
+}
+
+.resume:hover::after {
+  display: block;
+}
+
+.resume::after {
+  display: none;
+  content: "Download Resume";
+  line-height: 25px;
 }
 
 .layout-main {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .layout-footer {
@@ -85,9 +139,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-self: end; */
   gap: 1.5rem;
   font-family: var(--headings-font);
   color: var(--sub-text-color);
+  padding-bottom: 2rem;
 }
 
 .layout-footer hr {
@@ -127,6 +183,9 @@ body {
 
 .socials-link a:hover {
   color: var(--highlight-color);
+}
+
+.socials-link a:hover svg {
   fill: var(--highlight-color);
 }
 
@@ -140,6 +199,7 @@ body {
 }
 
 .header {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -198,8 +258,15 @@ body {
   gap: 1rem;
 }
 
-.intro-btn {
+.intro-btn a {
+  display: flex;
+  align-items: center;
   font-size: 15px;
+  gap: 0.5rem;
+}
+
+.intro-btn:hover a span {
+  color: var(--highlight-color);
 }
 
 .about-section {
