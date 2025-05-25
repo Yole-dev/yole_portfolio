@@ -13,6 +13,7 @@ export default function Home() {
       <AboutSection />
       <SkillSection />
       <ProjectSection />
+      <Experience />
     </section>
   );
 }
@@ -165,7 +166,7 @@ function ProjectSection() {
 
   return (
     <section className="project-section" id="projects">
-      <p>Projects</p>
+      <p>what i have been up to.</p>
 
       <div className="projects-container">
         {projectData.map((project) => (
@@ -188,9 +189,61 @@ function ProjectSection() {
               className="view-btn"
             >
               View Project
-              <i class="fa-solid fa-chevron-right"></i>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
             </Button>
           </ProjectBox>
+        ))}
+      </div>
+
+      <Button border="solid 1px #e6e8eb" className="view-all-projects-btn">
+        View All Projects
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </Button>
+    </section>
+  );
+}
+
+function Experience() {
+  const experienceData = [
+    {
+      year: "2023 - Present",
+      location: "Remote",
+      position: "Frontend Developer",
+      company: "Bloom Digitale",
+    },
+
+    {
+      year: "2022 - 2022",
+      location: "Lagos",
+      position: "Frontend Dev. Tutor",
+      company: "ITech Hub",
+    },
+  ];
+
+  return (
+    <section className="experience-section">
+      <p>work experience</p>
+
+      <div className="experience">
+        {experienceData.map((experience) => (
+          <div className="experience-detail">
+            <div className="experience-detail-item">
+              <p className="year">{experience.year}</p>
+
+              <p className="location">
+                <span>
+                  <ion-icon name="location-outline"></ion-icon>
+                </span>
+                {experience.location}
+              </p>
+            </div>
+
+            <div className="experience-detail-item">
+              <p className="position">{experience.position}</p>
+
+              <p className="company">{experience.company}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>

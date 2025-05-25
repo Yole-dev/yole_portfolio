@@ -107,7 +107,7 @@ body {
 }
 
 .projects {
-  border-inline: solid 1px var(--sub-text-color);
+  border-inline: solid 0.5px rgba(255, 255, 255, 0.295);
   padding: 0 1rem;
 }
 
@@ -397,15 +397,15 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
   padding: 0 1rem;
 }
 
 .project-section > p {
-  align-self: start;
   font-size: var(--headings-font);
   font-size: 25px;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 .projects-container {
@@ -462,7 +462,102 @@ body {
   align-self: start;
 }
 
+.view-btn ion-icon {
+  font-size: 18px;
+}
+
 .view-btn:hover {
   border: solid 1px var(--highlight-color) !important;
   gap: 1rem;
+}
+
+.view-btn:hover ion-icon {
+  color: var(--highlight-color);
+}
+
+.view-all-projects-btn {
+  display: flex;
+  align-self: center;
+  gap: 0.5rem;
+  font-size: 18px;
+}
+
+.view-all-projects-btn:hover {
+  background: var(--secondary-black) !important;
+  border: solid 1px var(--highlight-color) !important;
+  gap: 1rem;
+  box-shadow: 0 0.3rem 1.5rem var(--highlight-color);
+}
+
+.view-all-projects-btn ion-icon {
+  font-size: 20px;
+}
+
+.view-all-projects-btn:hover ion-icon {
+  color: var(--highlight-color);
+}
+
+.experience-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.experience-section > p {
+  font-size: var(--headings-font);
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.experience {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: var(--primary-black);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.experience-detail-item {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.year {
+  font-size: 15px;
+}
+
+.location {
+  display: flex;
+  align-items: end;
+  gap: 0.5rem;
+  font-weight: 300;
+}
+
+.location span {
+  color: var(--highlight-color);
+  font-weight: 300;
+}
+
+.position {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.company {
+  font-family: var(--headings-font);
+  font-size: 15px;
+  color: var(--highlight-color);
+  font-weight: 500;
 }
