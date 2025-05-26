@@ -4,7 +4,6 @@ export default function Button({
   background = "#080E1B",
   border = "",
   type = "",
-  onClick = {},
 }) {
   const btnStyle = {
     background,
@@ -16,12 +15,7 @@ export default function Button({
   };
 
   return (
-    <button
-      style={btnStyle}
-      className={className}
-      type={type}
-      onClick={onClick}
-    >
+    <button style={btnStyle} className={className} type={type}>
       {children}
     </button>
   );

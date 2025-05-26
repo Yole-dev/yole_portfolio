@@ -141,6 +141,7 @@ function ProjectSection() {
       description:
         "Quickaash is a loan platform designed to help both businesses and individuals easily access credit for their energy needs. Whether you need Cooking Gas, CNG, Petrol, Diesel, or to pay your Electricity Bills, Quickaash is here to take the financial pressure off.",
       imageSrc: `${project1}`,
+      path: "/quickaash_project",
     },
 
     {
@@ -149,6 +150,7 @@ function ProjectSection() {
       description:
         "At Bloom Digitale, we create strategic solutions that help brands grow and stay ahead of the competition. From web design, branding, UIUX, and mobile app development to Flutter development, we craft experiences that drive engagement and maximize ROI.",
       imageSrc: `${project2}`,
+      path: "/bloom_project",
     },
   ];
 
@@ -171,19 +173,24 @@ function ProjectSection() {
                   " ..."}
             </p>
 
-            <Button
-              background="#02050a"
-              border="solid 1px #e6e8eb"
-              className="view-btn"
-            >
-              View Project
-              <ion-icon name="chevron-forward-outline"></ion-icon>
-            </Button>
+            <Link to={project.path} className="project-link-btn">
+              <Button
+                background="#02050a"
+                border="solid 1px rgba(255, 255, 255, 0.1)"
+                className="view-btn"
+              >
+                View Project
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </Button>
+            </Link>
           </ProjectBox>
         ))}
       </div>
 
-      <Button border="solid 1px #e6e8eb" className="view-all-projects-btn">
+      <Button
+        border="solid 1px rgba(255, 255, 255, 0.1)"
+        className="view-all-projects-btn"
+      >
         <Link to="/projects">
           View All Projects
           <ion-icon name="chevron-forward-outline"></ion-icon>
@@ -292,7 +299,7 @@ function Contact() {
 
         <Button
           type="submit"
-          border="solid 1px #e6e8eb"
+          border="solid 1px rgba(255, 255, 255, 0.1)"
           className="submit-btn"
           onClick={handleClick}
         >

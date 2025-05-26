@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // import screen width watcher hook
 import useScreenWidth from "../components/useScreenWidth";
 
@@ -32,6 +34,7 @@ function AllProjects() {
       description:
         "Quickaash is a loan platform designed to help both businesses and individuals easily access credit for their energy needs. Whether you need Cooking Gas, CNG, Petrol, Diesel, or to pay your Electricity Bills, Quickaash is here to take the financial pressure off.",
       imageSrc: `${project1}`,
+      path: "/quickaash_project",
     },
 
     {
@@ -40,6 +43,7 @@ function AllProjects() {
       description:
         "At Bloom Digitale, we create strategic solutions that help brands grow and stay ahead of the competition. From web design, branding, UIUX, and mobile app development to Flutter development, we craft experiences that drive engagement and maximize ROI.",
       imageSrc: `${project2}`,
+      path: "/bloom_project",
     },
   ];
   return (
@@ -57,14 +61,16 @@ function AllProjects() {
               : project.description.split(" ").slice(0, 15).join(" ") + " ..."}
           </p>
 
-          <Button
-            background="#02050a"
-            border="solid 1px #e6e8eb"
-            className="view-btn"
-          >
-            View Project
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-          </Button>
+          <Link to={project.path} className="project-link-btn">
+            <Button
+              background="#02050a"
+              border="solid 1px rgba(255, 255, 255, 0.1)"
+              className="view-btn"
+            >
+              View Project
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </Button>
+          </Link>
         </ProjectBox>
       ))}
     </div>
