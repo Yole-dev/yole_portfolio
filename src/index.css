@@ -493,7 +493,7 @@ body {
 
 .view-all-projects-btn {
   display: flex;
-  align-self: center;
+  align-items: center;
   gap: 0.5rem;
   font-size: 18px;
 }
@@ -751,7 +751,78 @@ textarea:focus {
   gap: 0.5rem;
 }
 
-.status-text span {
+.status-text ion-icon {
   font-size: 18px;
   color: rgb(27, 241, 27);
+}
+
+.project-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.visit-project-btn:hover {
+  border: solid 1px var(--highlight-color) !important;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.visit-project-btn:hover .project-link {
+  gap: 0.8rem;
+}
+
+.visit-project-btn:hover .project-link ion-icon {
+  color: var(--highlight-color);
+}
+
+.control-btns {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.prev-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.next-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 18px;
+  font-weight: 200;
+  background: var(--secondary-black) !important;
+}
+
+.embla {
+  --slide-spacing: 1rem;
+  --slide-size: 80%;
+  overflow: hidden;
+  position: relative;
+}
+
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+  position: relative;
 }

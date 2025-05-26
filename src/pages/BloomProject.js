@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import ProjectClipsCarousel from "../components/Carousel";
 
-import image1 from "../assets/quickaash.png";
-import image2 from "../assets/quickaash_images/image2.png";
-import image3 from "../assets/quickaash_images/image1.PNG";
+import image1 from "../assets/bloomdigitale.png";
+
+import ProjectClipsCarousel from "../components/Carousel";
+import image2 from "../assets/bloom_images/image1.png";
+import image3 from "../assets/bloom_images/image2.png";
 
 import Button from "../components/Button";
 
-export default function QuickaashProject() {
+export default function BloomProject() {
   return (
     <section className="project-app-container">
       <ProjectClipsCarousel img1={image1} img2={image2} img3={image3} />
@@ -20,13 +21,13 @@ export default function QuickaashProject() {
 function Header() {
   return (
     <section className="project-heading">
-      <p>Quickaash</p>
+      <p>Bloom Digitale</p>
 
       <p>
-        Quickaash is a loan platform designed to help both businesses and
-        individuals easily access credit for their energy needs. Whether you
-        need Cooking Gas, CNG, Petrol, Diesel, or to pay your Electricity Bills,
-        Quickaash is here to take the financial pressure off.
+        Bloom Digitale, creates strategic solutions that help brands grow and
+        stay ahead of the competition. From web design, branding, UIUX, and
+        mobile app development to Flutter development, we craft experiences that
+        drive engagement and maximize ROI.
       </p>
     </section>
   );
@@ -39,10 +40,8 @@ function PageContent() {
         <div className="project-content-text">
           <p>Description</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Repellendus explicabo placeat, perspiciatis delectus incidunt dicta
-            omnis laboriosam excepturi a provident porro quos beatae sequi
-            ducimus, accusantium esse nostrum libero ipsa.
+            A Website showcasing the portfolio and services rendered by Bloom
+            Digitale.
           </p>
         </div>
 
@@ -50,18 +49,16 @@ function PageContent() {
           <p className="content-heading">Technologies</p>
 
           <div className="technologies">
-            <p>HTML</p>
+            <p>React</p>
             <p>JavaScript</p>
-            <p>Tailwind CSS</p>
-
-            <p>PostAPI</p>
+            <p>CSS</p>
             <p>Git</p>
           </div>
         </div>
 
         <div className="project-content-text">
           <p>Date</p>
-          <p>2024</p>
+          <p>2025</p>
         </div>
 
         <div className="project-content-text">
@@ -74,12 +71,12 @@ function PageContent() {
 
         <div className="project-content-text">
           <p>Type</p>
-          <p>Loan Platform</p>
+          <p>Startup Tech Company</p>
         </div>
 
         <div className="project-content-text">
           <p>Client</p>
-          <p>Quickaash</p>
+          <p>Bloom Digitale</p>
         </div>
       </section>
 
@@ -88,18 +85,30 @@ function PageContent() {
           border="solid 1px rgba(255, 255, 255, 0.1)"
           className="visit-project-btn"
         >
-          <a href="https://quickaash.com/" className="project-link">
+          <a href="https://bloom-revamped.vercel.app/" className="project-link">
             Visit Project
             <ion-icon name="enter-outline"></ion-icon>
           </a>
         </Button>
 
-        <Link to="/bloom_project">
-          <Button className="next-btn">
-            Next
-            <ion-icon name="chevron-forward-outline"></ion-icon>
-          </Button>
-        </Link>
+        <div className="control-btns">
+          <Link to="/quickaash_project">
+            <Button
+              border="solid 1px rgba(255, 255, 255, 0.1)"
+              className="prev-btn"
+            >
+              <ion-icon name="chevron-back-outline"></ion-icon>
+              Prev
+            </Button>
+          </Link>
+
+          <Link to="/bloom_project">
+            <Button className="next-btn">
+              Next
+              <ion-icon name="chevron-forward-outline"></ion-icon>
+            </Button>
+          </Link>
+        </div>
       </section>
     </>
   );

@@ -187,15 +187,15 @@ function ProjectSection() {
         ))}
       </div>
 
-      <Button
-        border="solid 1px rgba(255, 255, 255, 0.1)"
-        className="view-all-projects-btn"
-      >
-        <Link to="/projects">
+      <Link to="/projects">
+        <Button
+          border="solid 1px rgba(255, 255, 255, 0.1)"
+          className="view-all-projects-btn"
+        >
           View All Projects
           <ion-icon name="chevron-forward-outline"></ion-icon>
-        </Link>
-      </Button>
+        </Button>
+      </Link>
     </section>
   );
 }
@@ -304,9 +304,7 @@ function Contact() {
           onClick={handleClick}
         >
           Let's Talk
-          <span>
-            <ion-icon name="paper-plane-outline"></ion-icon>
-          </span>
+          <ion-icon name="paper-plane-outline"></ion-icon>
         </Button>
       </form>
     </section>

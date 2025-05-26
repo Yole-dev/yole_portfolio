@@ -5,6 +5,7 @@ import Layout from "./components/layout";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import QuickaashProject from "./pages/QuickaashProject";
+import BloomProject from "./pages/BloomProject";
 
 export default function App() {
   return (
@@ -42,7 +43,7 @@ export default function App() {
             path="/bloom_project"
             element={
               <Layout>
-                <Projects />
+                <BloomProject />
               </Layout>
             }
           />
