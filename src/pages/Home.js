@@ -1,11 +1,17 @@
+// imported Hooks
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useScreenWidth from "../components/useScreenWidth";
 
 import cartoonPic from "../assets/profile_pic.png";
 
 // imported projects images
 import project1 from "../assets/quickaash.png";
 import project2 from "../assets/bloomdigitale.png";
+
+// imported components
+import Button from "../components/Button";
+import ProjectBox from "../components/ProjectBox";
 
 export default function Home() {
   return (
@@ -18,26 +24,6 @@ export default function Home() {
       <Contact />
     </section>
   );
-}
-
-// custom hook to watch screen width changes
-function useScreenWidth() {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(
-    function () {
-      function handleResize() {
-        setWidth(window.innerWidth);
-      }
-
-      window.addEventListener("resize", handleResize);
-
-      return () => window.removeEventListener("resize", handleResize);
-    },
-    [width]
-  );
-
-  return width;
 }
 
 function Header() {
@@ -255,19 +241,65 @@ function Experience() {
 }
 
 function Contact() {
+  const [fullName, setFullName] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [message, setMessage] = useState("");
+
+  function handleClick() {
+    setFullName("");
+    setEmailAddress("");
+    setMessage("");
+  }
+
+  const contactData = {
+    name: { fullName },
+    email: { emailAddress },
+    message: { message },
+  };
+
   return (
     <section className="contact-section" id="contact">
       <p>want to talk?</p>
       <p></p>
 
-      <form action="" method="post">
-        <input type="text" placeholder="Full Name" />
-        <input type="email" placeholder="Email Address" />
+      <form>
+        <input
+          type="text"
+          placeholder="Full Name"
+          name="full_name"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email Address"
+          name="email_address"
+          value={emailAddress}
+          onChange={(e) => setEmailAddress(e.target.value)}
+          required
+        />
 
-        <textarea name="" id="" placeholder="Write your message"></textarea>
+        <textarea
+          placeholder="Write your message"
+          name="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        ></textarea>
 
-        <Button border="solid 1px #e6e8eb" className="submit-btn">
+        <input type="hidden" name="_captcha" value="false"></input>
+
+        <Button
+          type="submit"
+          border="solid 1px #e6e8eb"
+          className="submit-btn"
+          onClick={handleClick}
+        >
           Let's Talk
+          <span>
+            <ion-icon name="paper-plane-outline"></ion-icon>
+          </span>
         </Button>
       </form>
     </section>
@@ -281,31 +313,5 @@ function Box({ children, className = "" }) {
     <div className="box">
       <div className={`icon-box ${className}`}>{children}</div>
     </div>
-  );
-}
-
-function ProjectBox({ children }) {
-  return <div className="project-box">{children}</div>;
-}
-
-function Button({
-  children,
-  className = "",
-  background = "#080E1B",
-  border = "",
-}) {
-  const btnStyle = {
-    background,
-    borderRadius: "0.7rem",
-    padding: " 1rem 1.5rem ",
-    border,
-    color: "#FFFFFF",
-    cursor: "pointer",
-  };
-
-  return (
-    <button style={btnStyle} className={className}>
-      {children}
-    </button>
   );
 }
