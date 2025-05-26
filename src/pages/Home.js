@@ -267,7 +267,12 @@ function Contact() {
   return (
     <section className="contact-section" id="contact">
       <p>want to talk?</p>
-      <p></p>
+      <p>
+        Got a project or want to brainstorm frontend solutions? I'd love to
+        connect. My customer service background helps me build interfaces that
+        actually make sense to people. <br /> <br /> So send a mail, message or
+        DM on X.
+      </p>
 
       <form>
         <input
@@ -312,7 +317,6 @@ function Contact() {
 }
 
 // reusable components
-
 function Box({ children, className = "" }) {
   return (
     <div className="box">

@@ -235,6 +235,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 100%;
+  border: solid 3px var(--secondary-black);
   background: var(--highlight-color);
   position: relative;
   right: 1.5rem;
@@ -310,6 +311,7 @@ body {
   background: var(--primary-black);
   padding: 2rem 1rem;
   border-radius: 1rem;
+  border: solid 1px var(--primary-ash);
   font-size: 15px;
   font-weight: 300;
   line-height: 25px;
@@ -540,6 +542,7 @@ body {
   flex-direction: column;
   gap: 2rem;
   background: var(--primary-black);
+  border: solid 1px var(--primary-ash);
   padding: 1rem;
   border-radius: 0.5rem;
 }
@@ -592,6 +595,13 @@ body {
   font-size: 25px;
   font-weight: 600;
   text-transform: capitalize;
+}
+
+.contact-section > p:last-of-type {
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 25px;
+  color: var(--sub-text-color);
 }
 
 .contact-section form {
