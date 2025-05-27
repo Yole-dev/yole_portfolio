@@ -13,22 +13,26 @@ import project2 from "../assets/bloomdigitale.png";
 import Button from "../components/Button";
 import ProjectBox from "../components/ProjectBox";
 
+// imported animation component
+import FadeInAnimation from "../components/FadeInAnimation";
+import ComponentAnimation from "../components/ComponentAnimation";
+
 export default function Home() {
   return (
-    <section className="app-container">
+    <FadeInAnimation className="app-container">
       <Header />
       <AboutSection />
       <SkillSection />
       <ProjectSection />
       <Experience />
       <Contact />
-    </section>
+    </FadeInAnimation>
   );
 }
 
 function Header() {
   return (
-    <section className="header">
+    <ComponentAnimation className="header">
       <div className="header-img-div">
         <img
           src={cartoonPic}
@@ -56,16 +60,16 @@ function Header() {
           </a>
         </Button>
       </div>
-    </section>
+    </ComponentAnimation>
   );
 }
 
 function AboutSection() {
   return (
-    <section className="about-section">
+    <ComponentAnimation className="about-section">
       <p>About Me</p>
 
-      <div className="bio-div">
+      <ComponentAnimation className="bio-div">
         <p className="bio">
           I'm<span> Godswill Owhomaro Igbava</span>, a
           <span> Frontend Developer </span>
@@ -88,14 +92,14 @@ function AboutSection() {
         </p>
 
         <img src={cartoonPic} alt="" className="bio-img" />
-      </div>
-    </section>
+      </ComponentAnimation>
+    </ComponentAnimation>
   );
 }
 
 function SkillSection() {
   return (
-    <section className="skill-section">
+    <ComponentAnimation className="skill-section">
       <p>Skills</p>
 
       <div className="skills">
@@ -127,7 +131,7 @@ function SkillSection() {
           <i class="fa-brands fa-git-alt"></i>
         </Box>
       </div>
-    </section>
+    </ComponentAnimation>
   );
 }
 
@@ -155,7 +159,7 @@ function ProjectSection() {
   ];
 
   return (
-    <section className="project-section" id="projects">
+    <ComponentAnimation className="project-section" id="projects">
       <p>what i have been up to.</p>
 
       <div className="projects-container">
@@ -196,7 +200,7 @@ function ProjectSection() {
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </Button>
       </Link>
-    </section>
+    </ComponentAnimation>
   );
 }
 
@@ -218,7 +222,7 @@ function Experience() {
   ];
 
   return (
-    <section className="experience-section">
+    <ComponentAnimation className="experience-section">
       <p>work experience</p>
 
       <div className="experience">
@@ -243,7 +247,7 @@ function Experience() {
           </div>
         ))}
       </div>
-    </section>
+    </ComponentAnimation>
   );
 }
 
@@ -265,7 +269,7 @@ function Contact() {
   };
 
   return (
-    <section className="contact-section" id="contact">
+    <ComponentAnimation className="contact-section" id="contact">
       <p>want to talk?</p>
       <p>
         Got a project or want to brainstorm frontend solutions? I'd love to
@@ -312,7 +316,7 @@ function Contact() {
           <ion-icon name="paper-plane-outline"></ion-icon>
         </Button>
       </form>
-    </section>
+    </ComponentAnimation>
   );
 }
 

@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
+
+// imported components
 import ProjectClipsCarousel from "../components/Carousel";
+import FadeInAnimation from "../components/FadeInAnimation";
+import ComponentAnimation from "../components/ComponentAnimation";
 
 import image1 from "../assets/quickaash.png";
 import image2 from "../assets/quickaash_images/image2.png";
@@ -9,17 +13,17 @@ import Button from "../components/Button";
 
 export default function QuickaashProject() {
   return (
-    <section className="project-app-container">
+    <FadeInAnimation className="project-app-container">
       <ProjectClipsCarousel img1={image1} img2={image2} img3={image3} />
       <Header />
       <PageContent />
-    </section>
+    </FadeInAnimation>
   );
 }
 
 function Header() {
   return (
-    <section className="project-heading">
+    <ComponentAnimation className="project-heading">
       <p>Quickaash</p>
 
       <p>
@@ -28,14 +32,14 @@ function Header() {
         need Cooking Gas, CNG, Petrol, Diesel, or to pay your Electricity Bills,
         Quickaash is here to take the financial pressure off.
       </p>
-    </section>
+    </ComponentAnimation>
   );
 }
 
 function PageContent() {
   return (
     <>
-      <section className="project-content-details">
+      <ComponentAnimation className="project-content-details">
         <div className="project-content-text">
           <p>Description</p>
           <p>
@@ -81,9 +85,9 @@ function PageContent() {
           <p>Client</p>
           <p>Quickaash</p>
         </div>
-      </section>
+      </ComponentAnimation>
 
-      <section className="project-btns">
+      <ComponentAnimation className="project-btns">
         <Button
           border="solid 1px rgba(255, 255, 255, 0.1)"
           className="visit-project-btn"
@@ -100,7 +104,7 @@ function PageContent() {
             <ion-icon name="chevron-forward-outline"></ion-icon>
           </Button>
         </Link>
-      </section>
+      </ComponentAnimation>
     </>
   );
 }
