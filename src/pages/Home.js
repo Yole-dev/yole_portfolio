@@ -51,7 +51,10 @@ function Header() {
       </div>
 
       <div className="intro-btns">
-        <Button border="solid 1px #1e90ff" className="intro-btn">
+        <Button
+          border="solid 1px rgba(255, 255, 255, 0.1)"
+          className="intro-btn"
+        >
           <a href="#contact">
             Hire Me
             <span>

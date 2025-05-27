@@ -9,6 +9,12 @@
   --text-color: #ffffff;
   --sub-text-color: #e6e8eb;
   --highlight-color: #1e90ff;
+  --gradient-color: linear-gradient(
+    135deg,
+    #02050a,
+    rgba(255, 255, 255, 0.1),
+    #1e90ff
+  );
   --headings-font: "Montserrat", sans-serif;
   --general-font: "Nunito", sans-serif;
 }
@@ -89,6 +95,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
 
 .nav-item:hover {
@@ -108,10 +115,12 @@ body {
   background: var(--primary-black);
   padding: 0.5rem;
   border-radius: 0.3rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .home:hover::after {
   display: block;
+  transition: all 0.3s ease-in-out;
 }
 
 .home::after {
@@ -126,15 +135,18 @@ body {
 
 .projects:hover::after {
   display: block;
+  transition: all 0.3s ease-in-out;
 }
 
 .projects::after {
   display: none;
   content: "Projects";
+  transition: all 0.3s ease-in-out;
 }
 
 .resume:hover::after {
   display: block;
+  transition: all 0.3s ease-in-out;
 }
 
 .resume::after {
@@ -186,12 +198,14 @@ body {
 
 .socials-link a {
   font-size: 23px;
+  transition: all 0.3s ease-in-out;
 }
 
 .socials-link a svg {
   fill: var(--sub-text-color);
   width: 20px;
   height: 20px;
+  transition: all 0.3s ease-in-out;
 }
 
 .socials-link a:hover {
@@ -270,17 +284,35 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .intro-btn a {
   display: flex;
   align-items: center;
   font-size: 15px;
+  font-weight: 300;
   gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.intro-btn a span {
+  transition: all 0.3s ease-in-out;
+}
+
+.intro-btn:hover {
+  border: solid 1px var(--text-color) !important;
+  box-shadow: 0 0.1rem 0.2rem var(--gradient-color) !important;
+}
+
+.intro-btn:hover a {
+  font-size: 17px;
+  color: var(--text-color);
+  gap: 0.8rem;
 }
 
 .intro-btn:hover a span {
-  color: var(--highlight-color);
+  color: red;
 }
 
 .about-section {
@@ -317,6 +349,7 @@ body {
   line-height: 25px;
   text-align: justify;
   color: var(--sub-text-color);
+  transition: all 0.3s ease-in-out;
 }
 
 .bio:hover {
@@ -478,6 +511,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .view-btn ion-icon {
@@ -498,13 +532,15 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-size: 18px;
+  transition: all 0.3s ease-in-out;
 }
 
 .view-all-projects-btn:hover {
+  color: var(--text-color) !important;
   background: var(--secondary-black) !important;
-  border: solid 1px var(--highlight-color) !important;
+  border: solid 1px var(--text-color) !important;
   gap: 1rem;
-  box-shadow: 0 0.3rem 1.5rem var(--highlight-color);
+  box-shadow: 0 0.1rem 0.2rem var(--gradient-color);
 }
 
 .view-all-projects-btn ion-icon {
@@ -512,7 +548,7 @@ body {
 }
 
 .view-all-projects-btn:hover ion-icon {
-  color: var(--highlight-color);
+  color: var(--text-color);
 }
 
 .experience-section {
@@ -621,6 +657,7 @@ textarea {
   font-size: 16px;
   font-weight: 300;
   color: var(--sub-text-color);
+  transition: all 0.3s ease-in-out;
 }
 
 .contact-section form input:focus,
@@ -639,12 +676,15 @@ textarea:focus {
 .submit-btn {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.7rem;
   font-size: 18px;
+  transition: all 0.3s ease-in-out;
 }
 
 .submit-btn:hover {
-  border: solid 1px var(--highlight-color) !important;
+  gap: 1rem;
+  border: solid 1px var(--text-color) !important;
+  box-shadow: 0 0.1rem 0.2rem var(--gradient-color) !important;
 }
 
 /* Projects page */
@@ -771,6 +811,7 @@ textarea:focus {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .visit-project-btn:hover {
@@ -783,6 +824,11 @@ textarea:focus {
   gap: 0.5rem;
   font-size: 18px;
   font-weight: 400;
+  transition: all 0.3s ease-in-out;
+}
+
+.visit-project-btn {
+  transition: all 0.3s ease-in-out;
 }
 
 .visit-project-btn:hover .project-link {
@@ -797,6 +843,7 @@ textarea:focus {
   display: flex;
   align-items: center;
   gap: 3rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .prev-btn {
@@ -805,6 +852,13 @@ textarea:focus {
   gap: 0.5rem;
   font-size: 18px;
   font-weight: 200;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.prev-btn:hover {
+  border: solid 1px var(--sub-text-color) !important;
+  gap: 0.8rem;
 }
 
 .next-btn {
@@ -813,7 +867,14 @@ textarea:focus {
   gap: 0.5rem;
   font-size: 18px;
   font-weight: 200;
+  letter-spacing: 2px;
   background: var(--secondary-black) !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.next-btn:hover {
+  border: solid 1px var(--text-color) !important;
+  gap: 0.8rem;
 }
 
 .embla {
