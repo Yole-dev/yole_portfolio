@@ -4,6 +4,7 @@ export default function Button({
   background = "#080E1B",
   border = "",
   type = "",
+  disabled,
 }) {
   const btnStyle = {
     background,
@@ -15,7 +16,12 @@ export default function Button({
   };
 
   return (
-    <button style={btnStyle} className={className} type={type}>
+    <button
+      style={btnStyle}
+      className={className}
+      type={type}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

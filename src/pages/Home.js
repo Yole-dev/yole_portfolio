@@ -1,6 +1,6 @@
 // imported Hooks
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useScreenWidth from "../components/useScreenWidth";
 
 import cartoonPic from "../assets/profile_pic.png";
@@ -16,6 +16,7 @@ import ProjectBox from "../components/ProjectBox";
 // imported animation component
 import FadeInAnimation from "../components/FadeInAnimation";
 import ComponentAnimation from "../components/ComponentAnimation";
+import TextAnimation from "../components/TextAnimation";
 
 export default function Home() {
   return (
@@ -44,7 +45,14 @@ function Header() {
       </div>
 
       <div className="intro-text">
-        <p>Hello, I'm Godswill Igbava.</p>
+        <p>
+          Hello,{" "}
+          <TextAnimation
+            text="I'm Godswill Igbava."
+            duration={3}
+            animationType="typing"
+          />
+        </p>
         <p>Frontend Web Developer</p>
 
         <p>I create engaging and responsive web experiences.</p>
@@ -230,7 +238,7 @@ function Experience() {
 
       <div className="experience">
         {experienceData.map((experience) => (
-          <div className="experience-detail">
+          <div className="experience-detail" key={experience.company}>
             <div className="experience-detail-item">
               <p className="year">{experience.year}</p>
 
@@ -258,18 +266,58 @@ function Contact() {
   const [fullName, setFullName] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  function handleClick() {
-    setFullName("");
-    setEmailAddress("");
-    setMessage("");
+  useEffect(
+    function () {
+      async function sendEmailMessage() {
+        setIsLoading(true);
+        try {
+          const response = await fetch(
+            "https://api.emailjs.com/api/v1.0/email/send",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+
+              body: JSON.stringify({
+                service_id: "service_8ku20jn",
+                template_id: "template_hiizfrd",
+                user_id: "K-c-JQucCIXu54R1_",
+                template_params: {
+                  name: fullName,
+                  email: emailAddress,
+                  message: message,
+                },
+              }),
+            }
+          );
+          if (!response.ok)
+            throw new Error("Failed to send message, please try again. 🙏🏾🥺🙏🏾");
+
+          alert("Message sent successfully 🎉🎉");
+          setFullName("");
+          setEmailAddress("");
+          setMessage("");
+        } catch (err) {
+          alert(err.message);
+        } finally {
+          setIsSubmitted(false);
+          setIsLoading(false);
+        }
+      }
+
+      if (isSubmitted) sendEmailMessage();
+    },
+    [isSubmitted, fullName, emailAddress, message]
+  );
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setIsSubmitted(true);
   }
-
-  const contactData = {
-    name: { fullName },
-    email: { emailAddress },
-    message: { message },
-  };
 
   return (
     <ComponentAnimation className="contact-section" id="contact">
@@ -281,11 +329,11 @@ function Contact() {
         DM on X.
       </p>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Full Name"
-          name="full_name"
+          name="name"
           value={fullName}
           onChange={(e) => setFullName(e.target.value)}
           required
@@ -293,7 +341,7 @@ function Contact() {
         <input
           type="email"
           placeholder="Email Address"
-          name="email_address"
+          name="email"
           value={emailAddress}
           onChange={(e) => setEmailAddress(e.target.value)}
           required
@@ -307,15 +355,13 @@ function Contact() {
           required
         ></textarea>
 
-        <input type="hidden" name="_captcha" value="false"></input>
-
         <Button
           type="submit"
           border="solid 1px rgba(255, 255, 255, 0.1)"
           className="submit-btn"
-          onClick={handleClick}
+          disabled={isLoading}
         >
-          Let's Talk
+          {isLoading ? "Sending..." : "Let's Talk"}
           <ion-icon name="paper-plane-outline"></ion-icon>
         </Button>
       </form>
