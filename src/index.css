@@ -57,6 +57,54 @@ body {
   overflow-x: hidden;
 }
 
+.loading-page {
+  width: 100svw;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-black);
+}
+
+.loader {
+  display: flex;
+  gap: 0.7rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-ash);
+  background: rgba(8, 14, 27, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background-color: var(--highlight-color);
+  animation: bounce 1s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+}
+
 .layout-container {
   width: 100svw;
   height: 100svh;

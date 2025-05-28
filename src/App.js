@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 // imported pages
 import Layout from "./components/layout";
@@ -8,6 +9,17 @@ import QuickaashProject from "./pages/QuickaashProject";
 import BloomProject from "./pages/BloomProject";
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(function () {
+    const timer = setTimeout(() => setIsLoading(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return <>{isLoading ? <LoadingComponent /> : <AppComponent />}</>;
+}
+
+function AppComponent() {
   return (
     <div className="app">
       <Router>
@@ -49,6 +61,18 @@ export default function App() {
           />
         </Routes>
       </Router>
+    </div>
+  );
+}
+
+function LoadingComponent() {
+  return (
+    <div className="loading-page">
+      <div className="loader">
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+      </div>
     </div>
   );
 }
