@@ -8,11 +8,14 @@ import Projects from "./pages/Projects";
 import QuickaashProject from "./pages/QuickaashProject";
 import BloomProject from "./pages/BloomProject";
 
+//imported component
+import TextAnimation from "./components/TextAnimation";
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(function () {
-    const timer = setTimeout(() => setIsLoading(false), 5000);
+    const timer = setTimeout(() => setIsLoading(false), 5500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -68,10 +71,13 @@ function AppComponent() {
 function LoadingComponent() {
   return (
     <div className="loading-page">
-      <div className="loader">
-        <div className="dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
+      <div className="loading-container">
+        <TextAnimation text="Welcome" duration={2} animationType="typing" />
+        <div className="loader">
+          <div className="dot"></div>
+          <div className="dot"></div>
+          <div className="dot"></div>
+        </div>
       </div>
     </div>
   );
