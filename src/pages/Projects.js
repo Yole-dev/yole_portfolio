@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 
-// import screen width watcher hook
+// import custom hook
 import useScreenWidth from "../components/useScreenWidth";
 
 // imported images
 import project1 from "../assets/quickaash.png";
 import project2 from "../assets/bloomdigitale.png";
+import project3 from "../assets/spacetourism.PNG";
 
 // imported components
 import Button from "../components/Button";
@@ -44,6 +45,15 @@ function AllProjects() {
         "At Bloom Digitale, we create strategic solutions that help brands grow and stay ahead of the competition. From web design, branding, UIUX, and mobile app development to Flutter development, we craft experiences that drive engagement and maximize ROI.",
       imageSrc: `${project2}`,
       path: "/bloom_project",
+    },
+
+    {
+      id: "space tourism",
+      companyName: "Space Tourism",
+      description:
+        "A multi-page responsive website built based on a Frontend Mentor challenge. This project showcases a clean and modern UI for a fictional space tourism company, featuring dynamic routing, responsive layouts for mobile, tablet, and desktop screens, and reusable components. Built with React, Tailwind CSS, and React Router, the site demonstrates effective component structure, accessibility, and performance optimization practices.",
+      imageSrc: `${project3}`,
+      path: "/space_tourism_project",
     },
   ];
   return (

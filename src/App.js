@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import QuickaashProject from "./pages/QuickaashProject";
 import BloomProject from "./pages/BloomProject";
-
+import SpaceTourismProject from "./pages/SpaceTourismProject";
 //imported component
 import TextAnimation from "./components/TextAnimation";
 
@@ -59,6 +59,15 @@ function AppComponent() {
             element={
               <Layout>
                 <BloomProject />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/space_tourism_project"
+            element={
+              <Layout>
+                <SpaceTourismProject />
               </Layout>
             }
           />

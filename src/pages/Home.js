@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useScreenWidth from "../components/useScreenWidth";
 
-import cartoonPic from "../assets/profile_pic.png";
-
 // imported projects images
+import cartoonPic from "../assets/profile_pic.png";
+import bioPic from "../assets/bio_pic.webp";
 import project1 from "../assets/quickaash.png";
 import project2 from "../assets/bloomdigitale.png";
 
@@ -102,7 +102,7 @@ function AboutSection() {
           strengths. Let's build something better.
         </p>
 
-        <img src={cartoonPic} alt="" className="bio-img" />
+        <img src={bioPic} alt="" className="bio-img" />
       </ComponentAnimation>
     </ComponentAnimation>
   );

@@ -431,9 +431,10 @@ body {
 .bio-img {
   width: 200px;
   height: 200px;
+  transform: rotate(10deg);
   border-radius: 100%;
   border: solid 3px var(--primary-ash);
-  box-shadow: 0 0 0.5rem var(--highlight-color);
+  box-shadow: 0 0 0.5rem var(--primary-black);
 }
 
 .skill-section {
@@ -1017,6 +1018,10 @@ textarea:focus {
     font-size: 35px;
   }
 
+  .bio-div {
+    flex-direction: row;
+  }
+
   .bio {
     font-size: 23px;
   }
@@ -1024,6 +1029,8 @@ textarea:focus {
   .bio-img {
     width: 300px;
     height: 300px;
+    border-radius: 0.5rem;
+    transform: rotate(0deg);
   }
 
   .skill-section > p {
