@@ -7,6 +7,7 @@ import useScreenWidth from "../components/useScreenWidth";
 import project1 from "../assets/quickaash.png";
 import project2 from "../assets/bloomdigitale.png";
 import project3 from "../assets/spacetourism.PNG";
+import project4 from "../assets/therapify_me.png";
 
 // imported components
 import Button from "../components/Button";
@@ -54,6 +55,15 @@ function AllProjects() {
         "A multi-page responsive website built based on a Frontend Mentor challenge. This project showcases a clean and modern UI for a fictional space tourism company, featuring dynamic routing, responsive layouts for mobile, tablet, and desktop screens, and reusable components. Built with React, Tailwind CSS, and React Router, the site demonstrates effective component structure, accessibility, and performance optimization practices.",
       imageSrc: `${project3}`,
       path: "/space_tourism_project",
+    },
+
+    {
+      id: "therapifyMe",
+      companyName: "TherapifyMe",
+      description:
+        "TherapifyMe is a browser-based wellness companion that uses voice and empathetic AI for emotional check-ins anytime, anywhere.",
+      imageSrc: `${project4}`,
+      path: "/therapifyme_project",
     },
   ];
   return (

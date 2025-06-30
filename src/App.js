@@ -8,6 +8,8 @@ import Projects from "./pages/Projects";
 import QuickaashProject from "./pages/QuickaashProject";
 import BloomProject from "./pages/BloomProject";
 import SpaceTourismProject from "./pages/SpaceTourismProject";
+import TherapifyMeProject from "./pages/TherapifyMeProject";
+
 //imported component
 import TextAnimation from "./components/TextAnimation";
 
@@ -68,6 +70,15 @@ function AppComponent() {
             element={
               <Layout>
                 <SpaceTourismProject />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/therapifyme_project"
+            element={
+              <Layout>
+                <TherapifyMeProject />
               </Layout>
             }
           />

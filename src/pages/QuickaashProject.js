@@ -43,10 +43,12 @@ function PageContent() {
         <div className="project-content-text">
           <p>Description</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Repellendus explicabo placeat, perspiciatis delectus incidunt dicta
-            omnis laboriosam excepturi a provident porro quos beatae sequi
-            ducimus, accusantium esse nostrum libero ipsa.
+            QuickAash is a fast, secure peer-to-peer (P2P) lending and borrowing
+            platform designed to connect everyday people who need quick cash
+            with those willing to lend. It offers a simple, transparent way to
+            request or offer loans without going through traditional banks.
+            Users can create loan offers, accept terms, and track repayments,
+            all from a clean, user-friendly interface.
           </p>
         </div>
 

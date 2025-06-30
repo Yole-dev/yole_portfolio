@@ -5,13 +5,13 @@ import ProjectClipsCarousel from "../components/Carousel";
 import FadeInAnimation from "../components/FadeInAnimation";
 import ComponentAnimation from "../components/ComponentAnimation";
 
-import image1 from "../assets/space_tourism_images/spacetourism.PNG";
-import image2 from "../assets/space_tourism_images/image2.png";
-import image3 from "../assets/space_tourism_images/image1.png";
+import image1 from "../assets/therapify_images/image1.png";
+import image2 from "../assets/therapify_images/image2.png";
+import image3 from "../assets/therapify_images/image3.png";
 
 import Button from "../components/Button";
 
-export default function SpaceTourismProject() {
+export default function TherapifyMeProject() {
   return (
     <FadeInAnimation className="project-app-container">
       <ProjectClipsCarousel img1={image1} img2={image2} img3={image3} />
@@ -24,9 +24,9 @@ export default function SpaceTourismProject() {
 function Header() {
   return (
     <ComponentAnimation className="project-heading">
-      <p>Space Tourism</p>
+      <p>TherapifyMe</p>
 
-      <p>A fictional space tourism company</p>
+      <p>An AI-powered mental wellness web application.</p>
     </ComponentAnimation>
   );
 }
@@ -38,13 +38,19 @@ function PageContent() {
         <div className="project-content-text">
           <p>Description</p>
           <p>
-            A multi-page responsive website built based on a Frontend Mentor
-            challenge. This project showcases a clean and modern UI for a
-            fictional space tourism company, featuring dynamic routing,
-            responsive layouts for mobile, tablet, and desktop screens, and
-            reusable components. Built with React, Tailwind CSS, and React
-            Router, the site demonstrates effective component structure,
-            accessibility, and performance optimization practices.
+            TherapifyMe is a supportive AI-powered mental wellness app designed
+            to help users express their emotions and receive calming,
+            motivational, or reflective voice responses based on how they're
+            feeling. Users simply speak into the app, and the AI gently responds
+            with a personalized audio message, creating a safe and soothing
+            space for self-reflection. It's like having a compassionate digital
+            companion that listens and responds thoughtfully — any time,
+            anywhere. <br /> <br />
+            The app is built using React and TypeScript for the frontend, with
+            Supabase handling authentication and user data storage. It
+            integrates AI language models for emotional understanding,
+            ElevenLabs for lifelike voice responses, and supports mood-based
+            journaling and self-care suggestions.
           </p>
         </div>
 
@@ -53,10 +59,12 @@ function PageContent() {
 
           <div className="technologies">
             <p>React</p>
-            <p>JavaScript</p>
+            <p>TypeScript</p>
             <p>Tailwind CSS</p>
 
             <p>React Router</p>
+            <p>Supabase</p>
+            <p>ElevenLabs</p>
             <p>Git</p>
           </div>
         </div>
@@ -76,12 +84,12 @@ function PageContent() {
 
         <div className="project-content-text">
           <p>Type</p>
-          <p>Space Exploration Company</p>
+          <p>Web Application</p>
         </div>
 
         <div className="project-content-text">
           <p>Client</p>
-          <p>Space Tourism</p>
+          <p>Personal Project</p>
         </div>
       </ComponentAnimation>
 
@@ -90,17 +98,14 @@ function PageContent() {
           border="solid 1px rgba(255, 255, 255, 0.1)"
           className="visit-project-btn"
         >
-          <a
-            href="https://space-tourism-blush-nine.vercel.app/"
-            className="project-link"
-          >
+          <a href="https://therapifyme.netlify.app/" className="project-link">
             Visit Project
             <ion-icon name="enter-outline"></ion-icon>
           </a>
         </Button>
 
         <div className="control-btns">
-          <Link to="/bloom_project">
+          <Link to="/space_tourism_project">
             <Button
               border="solid 1px rgba(255, 255, 255, 0.1)"
               className="prev-btn"
@@ -110,7 +115,7 @@ function PageContent() {
             </Button>
           </Link>
 
-          <Link to="/therapifyme_project">
+          <Link to="/quickaash_project">
             <Button className="next-btn">
               Next
               <ion-icon name="chevron-forward-outline"></ion-icon>
