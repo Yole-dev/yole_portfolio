@@ -88,7 +88,7 @@ function PageContent() {
           border="solid 1px rgba(255, 255, 255, 0.1)"
           className="visit-project-btn"
         >
-          <a href="https://bloom-revamped.vercel.app/" className="project-link">
+          <a href="https://www.bloomdigitale.com/" className="project-link">
             Visit Project
             <ion-icon name="enter-outline"></ion-icon>
           </a>
